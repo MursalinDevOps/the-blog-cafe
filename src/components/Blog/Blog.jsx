@@ -2,7 +2,7 @@ const Blog = ({ blog }) => {
     const { cover, author_img, author, posted_date, reading_time, title, hashtags } = blog;
     console.log(blog)
     return (
-        <div>
+        <div className="mx-3 md:mx-0">
             <img className="w-full" src={cover} />
             {/* Avatar and Icon */}
             <div className="flex justify-between items-center my-5">
