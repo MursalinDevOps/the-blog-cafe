@@ -16,8 +16,11 @@ function App() {
     setBookmarks(newBookmarks)
   }
 
-  const handleMarkAsRead = (time) => {
-    setReadingTime(readingTime + time)
+  const handleMarkAsRead = (time, id) => {
+    setReadingTime(readingTime + time);
+    // remove mark as read from queue
+    const remainingBookmarks = bookmarks.filter(bookmark => bookmark.id !== id);
+    setBookmarks(remainingBookmarks)
   }
 
   // JSX

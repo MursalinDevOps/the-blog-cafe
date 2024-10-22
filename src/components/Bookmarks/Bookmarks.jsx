@@ -14,8 +14,8 @@ export default function Bookmarks({ bookmarks, readingTime }) {
                     </h3>
                     <div>
                         {
-                            bookmarks.map(bookmark => <Bookmark
-                                key={bookmark.id}
+                            bookmarks.map((bookmark, idx) => <Bookmark
+                                key={idx}
                                 bookmark={bookmark}></Bookmark>)
                         }
                     </div>

@@ -1,8 +1,10 @@
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
-    const { cover, author_img, author, posted_date, reading_time, title, hashtags } = blog;
+    const {id, cover, author_img, author, posted_date, reading_time, title, hashtags } = blog;
     return (
         <div className="mx-3 md:mx-0">
+            <a href="https://youtu.be/dQw4w9WgXcQ">
             <img className="w-full" src={cover} />
+            </a>
             {/* Avatar and Icon */}
             <div className="flex justify-between items-center my-5">
                 <div className="flex gap-3">
@@ -27,7 +29,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
             <h3 className="font-bold text-[40px]">{title}</h3>
             <p className="text-gray-500">#{hashtags[0]}</p>
             <button
-                onClick={() => handleMarkAsRead(reading_time)}
+                onClick={() => handleMarkAsRead(reading_time, id)}
                 className="underline text-purple-600 mb-8">Mark as read</button>
         </div>
     );
