@@ -1,6 +1,5 @@
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmark }) => {
     const { cover, author_img, author, posted_date, reading_time, title, hashtags } = blog;
-    console.log(blog)
     return (
         <div className="mx-3 md:mx-0">
             <img className="w-full" src={cover} />
@@ -15,10 +14,13 @@ const Blog = ({ blog }) => {
                 </div>
                 <div className="flex gap-4 text-gray-500">
                     <p>{reading_time} min read</p>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <button 
+                    onClick={()=> handleAddToBookmark(blog)}
+                    className="text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
-                    </svg>
-                    </span>
+                        </svg>
+                    </button>
 
                 </div>
             </div>

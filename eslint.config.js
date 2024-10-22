@@ -33,7 +33,7 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
-      'prop-types':'off'
     },
+    'prop-Types': 'off',
   },
 ]
