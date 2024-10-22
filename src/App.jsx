@@ -6,25 +6,33 @@ import Header from './components/Header/Header'
 
 function App() {
 
+  // useState Hooks
   const [bookmarks, setBookmarks] = useState([]);
+  const [readingTime, setReadingTime] = useState(0)
 
+  // Event Handlers
   const handleAddToBookmark = (blog) => {
-    // console.log('Bookmark btn clicked')
-    // console.log(blog)
     const newBookmarks = [...bookmarks, blog]
     setBookmarks(newBookmarks)
   }
 
+  const handleMarkAsRead = (time) => {
+    setReadingTime(readingTime + time)
+  }
+
+  // JSX
   return (
     <div className='container mx-auto'>
       <Header></Header>
       <main className='md:flex my-4'>
-      <Blogs
-      handleAddToBookmark={handleAddToBookmark}
-      ></Blogs>
-      <Bookmarks
-      bookmarks={bookmarks}
-      ></Bookmarks>
+        <Blogs
+          handleAddToBookmark={handleAddToBookmark}
+          handleMarkAsRead={handleMarkAsRead}
+        ></Blogs>
+        <Bookmarks
+          bookmarks={bookmarks}
+          readingTime={readingTime}
+        ></Bookmarks>
       </main>
     </div>
   )
